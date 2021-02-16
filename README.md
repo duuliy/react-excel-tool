@@ -5,4 +5,4 @@ An excel tool, usage see example
 
 > example <br/>
 
-![example](https://raw.githubusercontent.com/duuliy/react-align-tool/main/assetsImg/example.png)
+![example](https://raw.githubusercontent.com/duuliy/react-excel-tool/master/assetsImg/example.png)
