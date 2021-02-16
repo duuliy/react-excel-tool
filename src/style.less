@@ -1,0 +1,214 @@
+@PrefixCls: excel-tool;
+
+.@{PrefixCls} {
+  position: relative;
+  font-family: PingFang SC, Microsoft YaHei, Helvetica Neue, Helvetica, Hiragino Sans GB, SimSun, sans-serif;
+  font-size: 12px;
+
+  .left-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+
+  .right-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  }
+
+  .right-top-wrapper {
+    overflow: auto;
+  }
+
+  .right-top-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .right-bottom-wrapper {
+    overflow: auto;
+  }
+
+  .inner-wrapper {
+    display: table;
+    position: relative;
+  }
+
+  .excel-table-left-header {
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  .excel-table-left-header>thead {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #e9e9e9;
+    color: white;
+  }
+
+  .excel-table-left-header th {
+    border: solid 1px #e9e9e9;
+    color: white;
+  }
+
+  .excel-table-left-header>tbody {
+    display: block;
+    overflow: auto;
+    background-color: #f7f7f7;
+  }
+
+  .excel-table-left-header>tbody::-webkit-scrollbar {
+    display: none;
+  }
+
+  .excel-table-left-header td {
+    padding: 1px 8px 0;
+    border: solid 1px #e9e9e9;
+  }
+
+  .excel-table-left-header td.excel-selected-cell-indicator {
+    background-color: #d9d9d9;
+  }
+
+  .excel-table-left-header td:hover,
+  .excel-table-left-header td.excel-selected-cell-indicator:hover {
+    background-color: #fcfcfc;
+  }
+
+  .excel-table {
+    border-collapse: collapse;
+    text-align: left;
+
+    >thead {
+      background-color: #f7f7f7;
+
+      >tr {
+        display: block;
+        text-align: left;
+      }
+    }
+
+    th {
+      padding: 1px 8px 0;
+      border: 1px solid #e9e9e9;
+      border-left: none;
+      font-weight: normal;
+      text-align: center;
+
+      &:first-child {
+        border-left: solid 1px #e9e9e9;
+      }
+    }
+
+    >tbody {
+      display: block;
+      overflow: auto;
+      background-color: white;
+      cursor: cell;
+
+      >tr:first-child {
+        font-weight: bold;
+      }
+    }
+
+    td:first-child {
+      font-weight: bold;
+    }
+
+    td {
+      position: relative;
+      padding: 1px 8px 0;
+      border: 1px solid #e9e9e9;
+    }
+
+    .excel-selected-cell {
+      background-color: #ecf6fd;
+    }
+  }
+
+  .excel-table th:hover,
+  .excel-table th.excel-selected-cell-indicator:hover {
+    background-color: #fcfcfc;
+  }
+
+  .excel-table th.excel-selected-cell-indicator,
+  .excel-table td.excel-selected-cell-indicator {
+    background-color: #d9d9d9;
+  }
+
+  .excel-input {
+    display: inline-block;
+    position: absolute;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0 0 1px #49a9ee inset, 0 0 0 1px #4ba7e9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 8px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    line-height: 100%;
+    color: inherit;
+  }
+
+  .excel-current-borders>div,
+  .excel-area-borders>div {
+    position: absolute;
+    background-color: #449bf2;
+  }
+
+  .excel-paste-borders>div {
+    position: absolute;
+    background-color: red;
+  }
+
+  .excel-drag-grip {
+    width: 8px;
+    height: 8px;
+    border: 2px solid white;
+    cursor: crosshair;
+  }
+
+  .excel-context {
+    position: absolute;
+    width: 200px;
+    padding: 8px 0;
+    background-color: #449bf2;
+    list-style: none;
+    color: white;
+    line-height: 32px;
+    z-index: 200;
+
+    >li {
+      padding: 0 20px;
+      text-align: left;
+
+      >span {
+        padding-left: 10px;
+      }
+
+      &:hover {
+        cursor: default;
+        text-decoration: underline;
+      }
+    }
+
+    >.divider {
+      height: 1px;
+      margin: 4px 10px;
+      background-color: rgba(255, 255, 255, 0.159);
+    }
+
+  }
+
+}
+
+* {
+  box-sizing: border-box;
+}
