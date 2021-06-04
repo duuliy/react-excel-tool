@@ -30,12 +30,10 @@
       }
     },
     "collectCoverageFrom": [
-      "__tests__/**/*.{js,jsx,ts,tsx}",
-      "!__tests__/**/*.test.{js,jsx,ts,tsx}"
+      "__tests__/**/*.{js,jsx}",
+      "!__tests__/**/*.test.{js,jsx}"
     ],
     "moduleFileExtensions": [
-      "ts",
-      "tsx",
       "js",
       "jsx",
       "json"
@@ -53,7 +51,6 @@
       "<rootDir>/enzyme.config.js"
     ],
     "transform": {
-      "^.+\\.(ts|tsx)?$": "ts-jest",
       "^.+\\.(js|jsx)?$": "babel-jest",
       "^.+\\.css$": "<rootDir>/testBuild/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/testBuild/fileTransform.js"
@@ -99,7 +96,6 @@
     "postcss-loader": "^4.1.0",
     "progress-bar-webpack-plugin": "^2.1.0",
     "style-loader": "^2.0.0",
-    "ts-jest": "^26.4.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "4.44.2",
     "webpack-cli": "^4.3.1",

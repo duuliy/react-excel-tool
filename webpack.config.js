@@ -17,7 +17,7 @@ module.exports = () => {
   const options = {
     target: "web",
     mode: isDev ? 'development' : 'production',
-    entry: isDev ? './example/index' : './src/align',
+    entry: isDev ? './example/index' : './src/index',
     output: {
       filename: '[name].[hash].js',
       path: path.join(__dirname, 'dist'),
@@ -29,7 +29,11 @@ module.exports = () => {
       clientLogLevel: 'warning',
       hot: true,
       inline: true,
-      port: 8888
+      port: 8888,
+      host: '0.0.0.0',
+    },
+    watchOptions: {
+      ignored: /node_modules/,
     },
     module: {
       rules: [
@@ -122,7 +126,7 @@ module.exports = () => {
       ]
     },
     resolve: {
-      extensions: [".js", ".jsx", ".json", ".less", ".css", ".ts", ".tsx"],
+      extensions: [".js", ".jsx", ".json", ".less", ".css"],
       enforceExtension: false,
     },
     optimization: {
@@ -187,7 +191,7 @@ module.exports = () => {
           }
         }
       }),
-      isDev&&new HtmlWebpackPlugin({
+      new HtmlWebpackPlugin({
         title: "align-tool",
         filename: "index.html",
         inject: true,
