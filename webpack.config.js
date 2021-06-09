@@ -44,7 +44,7 @@ module.exports = () => {
             options: {
               cacheDirectory: true,
               plugins: [
-                "@babel/plugin-proposal-class-properties",
+                "@babel/plugin-proposal-class-properties",  //编译类
               ]
             },
           }],
